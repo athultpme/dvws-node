@@ -35,7 +35,7 @@ jobs:
           output-file: sbom.json
       
       - name: Vulnerability scan
-        uses: anchore/grype-action@v1.13.0
+        uses: anchore/scan-action@v5
         with:
           path: .
           fail-build: false
