@@ -39,8 +39,8 @@ jobs:
 
       - name: Dependency scan (Grype) - fails on Critical / CVSS >= 9.0
         id: grype
-	    uses: anchore/scan-action@v3
-	    with:
+        uses: anchore/scan-action@v3
+        with:
 	      sbom: sbom.cyclonedx.json
 	      output-format: sarif
 	      severity-cutoff: critical
@@ -84,6 +84,6 @@ jobs:
       	   echo "## Security Scan Summary" >> "$GITHUB_STEP_SUMMARY"
 	       echo "- SBOM: sbom.cyclonedx.json (artifact: sbom)" >> "$GITHUB_STEP_SUMMARY"
 	       echo "- Grype SCA results (artifact: grype-results)" >> "$GITHUB_STEP_SUMMARY"
-	   echo "- Snyk SAST results (artifact: snyk-results)" >> "$GITHUB_STEP_SUMMARY"
-	   echo "- Manual DAST/SBOM evidence screenshots, if present (artifact: evidence-screenshots)" >> "$GITHUB_STEP_SUMMARY"
-	   echo "- Policy: build fails on any Critical finding /CVSS >= 9.0" >> "$GITHUB_STEP_SUMMARY"
+	       echo "- Snyk SAST results (artifact: snyk-results)" >> "$GITHUB_STEP_SUMMARY"
+	       echo "- Manual DAST/SBOM evidence screenshots, if present (artifact: evidence-screenshots)" >> "$GITHUB_STEP_SUMMARY"
+	       echo "- Policy: build fails on any Critical finding /CVSS >= 9.0" >> "$GITHUB_STEP_SUMMARY"
