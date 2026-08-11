@@ -33,7 +33,7 @@ The findings were consolidated into a prioritized mitigation strategy, and a CI/
 7. [Automation with GitHub Actions](#7-automation-with-github-actions)
 8. [Mitigation Strategy](#8-mitigation-strategy)
 9. [Conclusion](#9-conclusion)
-10. [References](#references)
+10. [Reference](#reference)
 
 
 ---
@@ -65,7 +65,7 @@ This assessment treats DVWS-Node as the target application and combines automate
 | Dependency Count | 530 components |
 
 
-### 1.4 Methodology
+## 2. Methodology
 
 A mix of two method approach was adopted, combining automated component-level analysis with manual exploitation, in line with recommended practice for holistic application security assessment. All testing was conducted against a local instance of DVWS-Node running on Kali Linux, in an isolated lab environment with no external network exposure.
 
@@ -326,7 +326,7 @@ The result support the broader conclusion that automated, dependency-centric ana
 ---
 
 
-## Reference
+## 10. Reference
 
 
 [1] OWASP Foundation. Available : https://owasp.org/www-project-top-ten/
