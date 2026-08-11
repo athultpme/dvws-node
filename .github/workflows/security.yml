@@ -40,7 +40,7 @@ jobs:
 
       - name: Dependency scan (Grype) - fails on Critical / CVSS >= 9.0
         id: grype
-	uses: anchore/scan-action@7
+	uses: anchore/scan-action@v3
 	with:
 	  sbom: sbom.cyclonedx.json
 	  output-format: sarif
