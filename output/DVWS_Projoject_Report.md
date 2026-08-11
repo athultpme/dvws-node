@@ -98,7 +98,7 @@ Syft (Anchore) was used to generate a Software Bill oF Materials for the DVWS-No
 
 The SBOM was the foundation for the rest of the assessment: it was fed into Dependency-Track for continuous SCA, and its component/version list was cross-referenced against the Snyk SAST findings.
 
-![Syft SBOM generation command](21_dvws_sbom.png) *Figure 1. Syft SBOM generation via Docker*
+![Syft SBOM generation command](21_dvws_sbom.png)*Figure 1. Syft SBOM generation via Docker*
 
 ---
 
@@ -117,6 +117,8 @@ The SBOM (530 components) was analyzed in OWASP Dependency-Track, which correlat
 | Medium | 8 |
 | Low | 4 |
 | Project Risk Score (Dependency-Track) | 358 |
+
+
 
 
 ![Dependency-Track dashboard showing 530 components, 63 vulnerabilities, and a Risk score of 358](18_Dependency_Tracker.png) *Figure 2. Dependency-Track Dashboard*
@@ -304,6 +306,7 @@ To integrate security testing into the software development lifecycle, an automa
 The complete workflow definition, security.yml, is reproduced below
 
 '''
+
 name: Security Pipeline
 
 on:
