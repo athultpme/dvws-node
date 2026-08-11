@@ -77,8 +77,8 @@ This assessment treats DVWS-Node as the target application and combines automate
 A mix of two method approach was adopted, combining automated component-level analysis with manual exploitation, in line with recommended practice for holistic application security assessment. All testing was conducted against a local instance of DVWS-Node running on Kali Linux, in an isolated lab environment with no external network exposure.
 
 | Stage | Tool | Purpose |
-|---|---|
-| SBOM generation | Syft (Anchore) | Enumerate all first and third-party componeents into a CycloneDX SBOM |
+|---|---|---|
+| SBOM generation | Syft (Anchore) | Enumerate all first and third-party components into a CycloneDX SBOM |
 | SCA | Snyk CLI | Statically identify known-vulnerable dependency code paths |
 | DAST | Burp Suite Community Edition, diesearch, Zaproxy | Manually probe the running application for exploitable vulnerabilities |
 | CI/CD automation | GitHub Actions | Automate SBOM/SCA/SAST execution |
