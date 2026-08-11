@@ -1,0 +1,1966 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.5",
+  "serialNumber" : "urn:uuid:7562c09a-6836-4a73-8147-7315e2753747",
+  "version" : 1,
+  "metadata" : {
+    "timestamp" : "2026-08-04T10:53:37Z",
+    "tools" : [
+      {
+        "vendor" : "OWASP",
+        "name" : "Dependency-Track",
+        "version" : "5.0.2"
+      }
+    ],
+    "component" : {
+      "type" : "file",
+      "bom-ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2",
+      "name" : "dvws-node",
+      "version" : "SNAPSHOT"
+    }
+  },
+  "vulnerabilities" : [
+    {
+      "bom-ref" : "7466253b-87d2-4c4c-81e0-61496a38c7c2",
+      "id" : "CVE-2026-22610",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.5,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        79
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to versions 19.2.18, 20.3.16, 21.0.7, and 21.1.0-rc.0, a cross-site scripting (XSS) vulnerability has been identified in the Angular Template Compiler. The vulnerability exists because Angular’s internal sanitization schema fails to recognize the href and xlink:href attributes of SVG <script> elements as a Resource URL context. This issue has been patched in versions 19.2.18, 20.3.16, 21.0.7, and 21.1.0-rc.0.",
+      "published" : "2026-01-10T04:16:01Z",
+      "updated" : "2026-06-17T10:20:09Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "629aa24a-eaf3-4dd1-8e0a-cd61433072ea",
+      "id" : "CVE-2026-27970",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.6,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        79
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Versions prior to 21.2.0, 21.1.16, 20.3.17, and 19.2.19 have a cross-Site scripting vulnerability in the Angular internationalization (i18n) pipeline. In ICU messages (International Components for Unicode), HTML from translated content was not properly sanitized and could execute arbitrary JavaScript. Angular i18n typically involves three steps, extracting all messages from an application in the source language, sending the messages to be translated, and then merging their translations back into the final source code. Translations are frequently handled by contracts with specific partner companies, and involve sending the source messages to a separate contractor before receiving final translations for display to the end user. If the returned translations have malicious content, it could be rendered into the application and execute arbitrary JavaScript. When successfully exploited, this vulnerability allows for execution of attacker controlled JavaScript in the application origin. Depending on the nature of the application being exploited this could lead to credential exfiltration and/or page vandalism. Several preconditions apply to the attack. The attacker must compromise the translation file (xliff, xtb, etc.). Unlike most XSS vulnerabilities, this issue is not exploitable by arbitrary users. An attacker must first compromise an application's translation file before they can escalate privileges into the Angular application client. The victim application must use Angular i18n, use one or more ICU messages, render an ICU message, and not defend against XSS via a safe content security policy. Versions 21.2.0, 21.1.6, 20.3.17, and 19.2.19 patch the issue. Until the patch is applied, developers should consider reviewing and verifying translated content received from untrusted third parties before incorporating it in an Angular application, enabling strict CSP controls to block unauthorized JavaScript from executing on the page, and enabling Trusted Types to enforce proper HTML sanitization.",
+      "published" : "2026-02-26T02:16:24Z",
+      "updated" : "2026-07-15T02:19:13Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "0ebce8ab-a3a7-4885-8a8c-cdd9a43f099d",
+      "id" : "CVE-2026-41423",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 5.3,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.7,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:L/SI:L/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        918
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to versions 19.2.21, 20.3.19, 21.2.9, and 22.0.0-next.8, a Server-Side Request Forgery (SSRF) vulnerability exists in @angular/platform-server due to improper handling of URLs during Server-Side Rendering (SSR). When an attacker sends a request such as GET /\\evil.com/ HTTP/1.1 the server engine (Express, etc.) passes the URL string to Angular’s rendering functions. Because the URL parser normalizes the backslash to a forward slash for HTTP/HTTPS schemes, the internal state of the application is hijacked to believe the current origin is evil.com. This misinterpretation tricks the application into treating the attacker’s domain as the local origin. Consequently, any relative HttpClient requests or PlatformLocation.hostname references are redirected to the attacker controlled server, potentially exposing internal APIs or metadata services. This issue has been patched in versions 19.2.21, 20.3.19, 21.2.9, and 22.0.0-next.8.",
+      "published" : "2026-05-08T14:16:33Z",
+      "updated" : "2026-06-17T10:46:42Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "91c0cc0b-ce6f-48de-a98d-f612ea5f3b15",
+      "id" : "CVE-2026-50557",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 5.3,
+          "severity" : "medium",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        79
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15, 20.3.22 and 19.2.22, an issue in the @angular/compiler and @angular/core packages allows bypassing element and attribute sanitization/validation through specific namespace workarounds. Specifically, namespaced script elements (e.g., <svg:script> or <:svg:script>) were not properly identified as script elements by the Angular template preparser, allowing them to pass through template compilation without being stripped. Furthermore, security context schema mappings for element attributes did not consistently handle attributes within namespaced elements (like SVG and MathML), opening up gaps where malicious namespaced attributes could bypass runtime and compile-time sanitizers. Combined, these flaws enable an attacker who can inject or supply a template/tag structure with custom namespaces to bypass Angular's script-stripping logic and attribute sanitizers, leading to client-side Cross-Site Scripting (XSS). This vulnerability is fixed in 22.0.0-rc.2, 21.2.15, 20.3.22 and 19.2.22.",
+      "published" : "2026-06-22T16:16:38Z",
+      "updated" : "2026-07-09T15:40:45Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "5fcba848-3254-4a7e-9f4f-f0b18f86762b",
+      "id" : "CVE-2026-52725",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 5.3,
+          "severity" : "medium",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        79
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23, an issue in the @angular/core package allows bypassing script-execution restrictions during dynamic component creation. Specifically, the dynamic component instantiation mechanism (createComponent) failed to reject mounting components directly onto a <script> or namespaced script element (such as <svg:script>). This enabled the initialization of custom components on a tag that executes scripts, allowing attackers to hijack or inject script-executing hosts. This flaw enables an attacker who can control the host element or selector parameter passed to createComponent to initialize or mount an Angular component directly onto a <script> tag, leading to execution of untrusted code or client-side Cross-Site Scripting (XSS). This vulnerability is fixed in 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23.",
+      "published" : "2026-06-22T16:16:38Z",
+      "updated" : "2026-07-09T15:38:38Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "81fbd9be-8e04-4409-870e-d2711f23f874",
+      "id" : "CVE-2026-54264",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.3,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        200,
+        359
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.1, 21.2.17, and 20.3.25, an information disclosure vulnerability exists in the @angular/service-worker package of the Angular framework. When the Service Worker fetches assets, it preserves metadata (such as headers) from the original request. However, on cross-origin redirects, the Service Worker fails to strip sensitive headers, violating the Fetch redirect algorithm. This allows a remote attacker to obtain sensitive credentials (e.g., Authorization tokens, Proxy-Authorization credentials, or session cookies) by triggering a cross-origin redirect to an untrusted external origin. This vulnerability is fixed in 22.0.1, 21.2.17, and 20.3.25.",
+      "published" : "2026-06-22T16:16:39Z",
+      "updated" : "2026-07-09T15:40:14Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "b1f21a17-aed1-44c8-8c8c-0a2986a3e50a",
+      "id" : "CVE-2026-54265",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 5.3,
+          "severity" : "medium",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        79
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.1, 21.2.17, and 20.3.25, an issue in the @angular/compiler package allows bypassing DOM property sanitization through the use of two-way property bindings. Specifically, when a native DOM property that requires sanitization (such as innerHTML, srcdoc, src, href, data, or sandbox) is bound using the two-way binding syntax (e.g., [(innerHTML)]=\"value\" or bindon-innerHTML=\"value\"), the Angular template compiler failed to apply the appropriate schema-derived sanitizer resolution to the TwoWayProperty operation. As a result, native two-way DOM bindings were emitted without the required sanitizer function, whereas equivalent one-way bindings would be properly sanitized. This flaw enables an attacker who can control the value of a two-way bound sensitive property to bypass Angular's built-in sanitization logic, potentially leading to client-side Cross-Site Scripting (XSS). This vulnerability is fixed in 22.0.1, 21.2.17, and 20.3.25.",
+      "published" : "2026-06-22T16:16:39Z",
+      "updated" : "2026-07-09T15:39:01Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "76ab3379-2a31-4522-b4e5-342a36f77130",
+      "id" : "CVE-2026-54266",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.8,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        328,
+        345
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.1, 21.2.17, and 20.3.25, Angular's HttpTransferCache caches HTTP requests made during Server-Side Rendering (SSR) so that they can be reused during client-side hydration. This avoids repeating the same HTTP requests on the client. The cached responses are stored in TransferState using a cache key generated by hashing request properties (method, response type, mapped URL, serialized body, and sorted query parameters). The cache keys are generated using a weak 32-bit DJB2-like polynomial rolling hash. The 32-bit hash space is extremely small, allowing attackers to find hash collisions. An attacker can easily find a query parameter string (e.g., q=aaCAZMMM for a search request) that produces the exact same 32-bit hash as a sensitive endpoint (e.g., /api/user/profile). When a victim visits a crafted link containing the colliding parameter, the SSR process executes both the search request and the profile request. Due to the hash collision, the search response overwrites the profile response in the TransferState cache. This vulnerability is fixed in 22.0.1, 21.2.17, and 20.3.25.",
+      "published" : "2026-06-22T16:16:39Z",
+      "updated" : "2026-07-09T15:39:58Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "8cc80705-f2e0-4518-88ee-44ac40b3b4a0",
+      "id" : "CVE-2026-54267",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.6,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        79,
+        471
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.1, 21.2.17, and 20.3.25, to optimize client-side bootstrap in Server-Side Rendered (SSR) environments, Angular supports Hydration via provideClientHydration(). During SSR, Angular serializes the application's runtime state (such as cached HttpClient responses) and outputs it into the HTML stream as a <script> tag with a predictable identifier. During client bootstrap, Angular recovers this state by looking up the element via document.getElementById('ng-state') and parsing its text content. Because the DOM element lookup for the state container is predictable and relies solely on the ID selector (ng-state), it is susceptible to DOM Clobbering. If the application binds untrusted user input or CMS content to element properties such as id (e.g., <div [id]=\"userInput\"> or <a id=\"ng-state\">) before the genuine <script> tag is parsed by the browser, the attacker-controlled element takes precedence in the DOM lookup. During hydration, when Angular calls document.getElementById('ng-state'), the browser returns the attacker's clobbered element. Angular then attempts to parse the text content or attributes of this clobbered element as JSON. This vulnerability is fixed in 22.0.1, 21.2.17, and 20.3.25.",
+      "published" : "2026-06-22T16:16:39Z",
+      "updated" : "2026-07-09T15:39:24Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "1149223d-a729-4789-ac72-9f8ddc235939",
+      "id" : "CVE-2026-54268",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.2,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        400,
+        1333
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.1, 21.2.17, and 20.3.25, a Denial of Service (DoS) vulnerability exists in the @angular/common package of the Angular framework. The formatDate function, which is also utilized by the standard Angular DatePipe, does not properly limit or validate the length of the format parameter. When parsing a maliciously crafted, excessively long date format string (e.g., a repeating pattern or very large string), the internal parser splits the string iteratively using a regular expression loop. This results in uncontrolled resource consumption (high CPU utilization and excessive memory allocations), leading to a Denial of Service (DoS). This vulnerability is fixed in 22.0.1, 21.2.17, and 20.3.25.",
+      "published" : "2026-06-22T16:16:39Z",
+      "updated" : "2026-07-09T15:39:41Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "4016c863-fbcf-4938-87d5-9cc66b39546b",
+      "id" : "CVE-2026-46417",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.8,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:L/SI:L/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        918
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-next.12, 21.2.13, 20.3.21, and 19.2.22, a Server-Side Request Forgery (SSRF) vulnerability exists in @angular/platform-server. The issue stems from how the server-side rendering (SSR) engine processes the request URL provided to the rendering entry points. When an absolute-form URL (e.g., http://evil.com) is passed to the rendering engine, the internal ServerPlatformLocation can be manipulated into adopting the attacker-controlled domain as the \"current\" hostname. Consequently, any relative HttpClient requests or PlatformLocation.hostname references are redirected to the attacker controlled server, potentially exposing internal APIs or metadata services. This vulnerability is fixed in 22.0.0-next.12, 21.2.13, 20.3.21, and 19.2.22.",
+      "published" : "2026-06-22T18:16:38Z",
+      "updated" : "2026-07-15T02:22:16Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "8a72f58f-6f40-4e8f-ad16-397a45ff3930",
+      "id" : "CVE-2026-50169",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 5.7,
+          "severity" : "medium",
+          "vector" : "CVSS:4.0/AV:L/AC:H/AT:P/PR:N/UI:P/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        200,
+        441,
+        524
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15 20.3.22, and 19.2.23, an issue in the @angular/service-worker package compromises the integrity of request-policy enforcement during request reconstruction. When the Angular Service Worker intercepts network requests for matched assets, it reconstructs a new Request object using an internal helper function. During this reconstruction process, the helper function strips the strict, client-defined request redirect policy configuration (such as redirect: 'error'), falling back to the browser's default 'follow' strategy. If the target web application makes client-side requests with a strict policy (e.g., expecting a network error instead of automatically following redirects), the service worker will bypass this instruction and automatically follow HTTP 3xx redirects to other destinations. This acts as an unintended proxy/intermediary (\"Confused Deputy\") and can result in cookie/credential exposure or same-origin session-restricted data leakage if public dynamic routes redirect to sensitive routes. This vulnerability is fixed in 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23.",
+      "published" : "2026-06-22T18:16:42Z",
+      "updated" : "2026-07-09T15:31:31Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "92c4e579-4c88-4c1e-9a4d-503456fa98dc",
+      "id" : "CVE-2026-50170",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.2,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        524
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23, a vulnerability was discovered in @angular/common when Server-Side Rendering (SSR) and hydration are enabled. The HttpTransferCache utility optimizes hydration by caching outgoing HTTP requests performed during SSR and transferring the cached state to the client-side application via TransferState. However, the caching mechanism fails to inspect the withCredentials flag or the Cookie header of outgoing requests. As a result, credentialed, user-specific responses may be cached by default in the shared TransferState payload. When these responses are serialized into the HTML, any caching layer (such as a CDN, reverse proxy, or shared server cache) that caches the SSR-rendered HTML page could inadvertently cache and leak one user's private data to other users, leading to a high-severity information disclosure vulnerability. This vulnerability is fixed in 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23.",
+      "published" : "2026-06-22T18:16:42Z",
+      "updated" : "2026-07-09T15:31:59Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "c415fad7-5a41-4139-8bb1-837efdb95468",
+      "id" : "CVE-2026-50171",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.2,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        400,
+        834
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23, a Denial of Service (DoS) vulnerability exists in the @angular/common package of Angular. The formatNumber function, which is also utilized by DecimalPipe, PercentPipe, and CurrencyPipe, does not properly validate the upper bounds of the digitsInfo parameter. Specifically, the minimum and maximum fraction digits parsed from the digitsInfo string (e.g., 1.2-4) are converted to integers and used without limits. When parsing a maliciously crafted digitsInfo string with excessively large fraction digit values (e.g., 1.200000000-200000000), the internal roundNumber function attempts to pad the digits array to match the requested fraction size. This results in an unbounded loop that repeatedly pushes elements into an array.  This vulnerability is fixed in 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23.",
+      "published" : "2026-06-22T18:16:42Z",
+      "updated" : "2026-07-09T15:41:41Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "9394a4a4-e1d3-426b-b05a-52286950d4c7",
+      "id" : "CVE-2026-50184",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 5.7,
+          "severity" : "medium",
+          "vector" : "CVSS:4.0/AV:L/AC:H/AT:P/PR:N/UI:P/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        200,
+        524
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23, an issue in the @angular/service-worker package compromises the integrity of request-policy enforcement during request reconstruction. When the Angular Service Worker intercepts network requests for matched assets, it reconstructs a new Request object using an internal helper function. During this reconstruction process, the helper function strips explicit client-defined safety parameters: the credentials configuration (such as credentials: 'omit') and the HTTP cache mode configuration (such as cache: 'no-store'). These are reverted back to standard browser-default parameters (credentials: 'same-origin' and default HTTP cache properties). This causes the browser to include active credentials (such as cookies or Authorization headers) on outbound requests where the client-side developer explicitly instructed they should be omitted, leading to potential session leaks. Additionally, it causes private or non-cacheable resources to be cached by the service worker's engine, making private page states accessible or persistent inside the client's local cache post-logout. This vulnerability is fixed in 22.0.0-rc.2, 21.2.15, 20.3.22, and 19.2.23.",
+      "published" : "2026-06-22T18:16:42Z",
+      "updated" : "2026-07-09T15:32:15Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "592935a5-92d0-4b4c-83d9-5a97fe0a59c2",
+      "id" : "CVE-2026-50555",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.6,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        79
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.16, 20.3.24, and 19.2.25, a Cross-Site Scripting (XSS) vulnerability exists in @angular/platform-server's DOM emulation dependency (domino) when serializing the content of raw-text elements (such as <script>, <style>, and <iframe>). domino supports escaping raw-text elements during serialization to prevent closing-tag breakout. However, a Unicode index alignment bug existed in this escaping logic. In JavaScript, string lengths and character indices are calculated based on UTF-16 code units (where astral characters—such as emojis—occupy 2 code units / 4 bytes). If the bound dynamic text contained astral Unicode characters before the closing tag (e.g. </script>, </style>, or </iframe>), the index offset calculation in domino's replacement logic shifted. This misalignment caused domino to fail to replace or escape the closing tag, leaving it raw and unescaped in the output HTML. An attacker who controls the dynamic text can supply a payload containing both an astral Unicode character and a closing tag (e.g., 😀</iframe><script>alert(1)</script>). When serialized on the server during SSR, the browser parses the unescaped closing tag, exits the raw-text context early, and executes the subsequent <script> block, leading to same-origin Cross-Site Scripting (XSS). This vulnerability is fixed in 22.0.0-rc.2, 21.2.16, 20.3.24, and 19.2.25.",
+      "published" : "2026-06-22T18:16:43Z",
+      "updated" : "2026-07-09T15:41:14Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "d711c98a-33ec-49f6-9b84-893c7f4301ce",
+      "id" : "CVE-2026-50556",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 6.1,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.6,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        79
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 22.0.0-rc.2, 21.2.16, 20.3.24, and 19.2.25, a Cross-Site Scripting (XSS) vulnerability exists in @angular/platform-server's DOM emulation dependency (domino) when serializing the content of <noscript> elements. When rendering dynamic text content inside a <noscript> element via template bindings (such as {{ value }} or [textContent]), the template engine expects the browser to render the content safely. Under Server-Side Rendering (SSR), domino is configured with scripting enabled, meaning <noscript> is treated as a raw-text element. However, domino's serializer completely omitted <noscript> from the list of raw-text elements requiring closing-tag escaping during DOM serialization. As a result, any occurrence of </noscript> in the bound dynamic text was never escaped under any circumstances. The unescaped closing tag was serialized directly into the output HTML (e.g. <noscript></noscript><script>alert(1)</script></noscript>). When parsed by a browser, it closes the <noscript> block early, allowing the injected <script> block to execute in the user's browser context, causing same-origin Cross-Site Scripting (XSS). This vulnerability is fixed in 22.0.0-rc.2, 21.2.16, 20.3.24, and 19.2.25.",
+      "published" : "2026-06-22T18:16:43Z",
+      "updated" : "2026-07-15T01:16:19Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "c7a840f3-db7b-4a45-920b-9c5e30d0e510",
+      "id" : "CVE-2025-66412",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 5.4,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.5,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        79
+      ],
+      "description" : "Angular is a development platform for building mobile and desktop web applications using TypeScript/JavaScript and other languages. Prior to 21.0.2, 20.3.15, and 19.2.17, A Stored Cross-Site Scripting (XSS) vulnerability has been identified in the Angular Template Compiler. It occurs because the compiler's internal security schema is incomplete, allowing attackers to bypass Angular's built-in security sanitization. Specifically, the schema fails to classify certain URL-holding attributes (e.g., those that could contain javascript: URLs) as requiring strict URL security, enabling the injection of malicious scripts. This vulnerability is fixed in 21.0.2, 20.3.15, and 19.2.17.",
+      "published" : "2025-12-01T23:15:53Z",
+      "updated" : "2026-06-17T09:56:47Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "1b144210-7fd2-4842-8245-8c577bd7f3e8",
+      "id" : "CVE-2026-12590",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 3.7,
+          "severity" : "low",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "cwes" : [
+        770
+      ],
+      "description" : "Impact: In body-parser versions prior to 1.20.6 (1.x line) and 2.3.0 (2.x line), when the parser is configured with an invalid limit option value such as an unparseable string or NaN, bytes.parse returns null and the request body size check is silently skipped. Applications that rely on limit as their primary safeguard against oversized request bodies will accept arbitrarily large payloads, leading to excessive memory and CPU usage and denial of service. Patches: This issue is fixed in body-parser 1.20.6 and 2.3.0. After the fix, invalid limit values throw a clear error at parser construction time instead of silently disabling enforcement, while null and undefined continue to fall back to the default limit of 100kb. Workarounds: Validate the limit value before passing it to body-parser. For example, parse the value at startup and reject any configuration where the result is null or a non-finite number.",
+      "published" : "2026-07-09T11:16:24Z",
+      "updated" : "2026-07-10T02:45:02Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "fe648cbb-c935-4da7-8388-be05449b6496",
+      "id" : "CVE-2026-33750",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes" : [
+        400
+      ],
+      "description" : "The brace-expansion library generates arbitrary strings containing a common prefix and suffix. Prior to versions 5.0.5, 3.0.2, 2.0.3, and 1.1.13, a brace pattern with a zero step value (e.g., `{1..2..0}`) causes the sequence generation loop to run indefinitely, making the process hang for seconds and allocate heaps of memory. Versions 5.0.5, 3.0.2, 2.0.3, and 1.1.13 fix the issue. As a workaround, sanitize strings passed to `expand()` to ensure a step value of `0` is not used.",
+      "published" : "2026-03-27T15:16:57Z",
+      "updated" : "2026-06-17T10:38:02Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "cf47e789-608b-4cf2-802c-3a65b41836fe",
+      "id" : "CVE-2026-24001",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 2.7,
+          "severity" : "low",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:U/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        400,
+        1333
+      ],
+      "description" : "jsdiff is a JavaScript text differencing implementation. Prior to versions 8.0.3, 5.2.2, 4.0.4, and 3.5.1, attempting to parse a patch whose filename headers contain the line break characters `\\r`, `\\u2028`, or `\\u2029` can cause the `parsePatch` method to enter an infinite loop. It then consumes memory without limit until the process crashes due to running out of memory. Applications are therefore likely to be vulnerable to a denial-of-service attack if they call `parsePatch` with a user-provided patch as input. A large payload is not needed to trigger the vulnerability, so size limits on user input do not provide any protection. Furthermore, some applications may be vulnerable even when calling `parsePatch` on a patch generated by the application itself if the user is nonetheless able to control the filename headers (e.g. by directly providing the filenames of the files to be diffed). The `applyPatch` method is similarly affected if (and only if) called with a string representation of a patch as an argument, since under the hood it parses that string using `parsePatch`. Other methods of the library are unaffected. Finally, a second and lesser interdependent bug - a ReDOS - also exhibits when those same line break characters are present in a patch's *patch* header (also known as its \"leading garbage\"). A maliciously-crafted patch header of length *n* can take `parsePatch` O(*n*³) time to parse. Versions 8.0.3, 5.2.2, 4.0.4, and 3.5.1 contain a fix. As a workaround, do not attempt to parse patches that contain any of these characters: `\\r`, `\\u2028`, or `\\u2029`.",
+      "published" : "2026-01-22T03:15:47Z",
+      "updated" : "2026-07-15T02:18:46Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "bfef4d25-4256-4cda-a2fe-25eec3954c79",
+      "id" : "CVE-2026-27837",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.8,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        1321
+      ],
+      "description" : "Dottie provides nested object access and manipulation in JavaScript. Versions 2.0.4 through 2.0.6 contain an incomplete fix for CVE-2023-26132. The prototype pollution guard introduced in commit `7d3aee1` only validates the first segment of a dot-separated path, allowing an attacker to bypass the protection by placing `__proto__` at any position other than the first. Both `dottie.set()` and `dottie.transform()` are affected. Version 2.0.7 contains an updated fix to address the residual vulnerability.",
+      "published" : "2026-02-26T01:16:24Z",
+      "updated" : "2026-06-17T10:27:46Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "9149a005-4101-4198-afc7-916d0d4c3bd3",
+      "id" : "CVE-2026-53550",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 5.3,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "cwes" : [
+        407
+      ],
+      "description" : "js-yaml is a JavaScript YAML parser and dumper. Prior to 4.2.0 and 3.15.0, a crafted YAML document can trigger algorithmic CPU exhaustion in js-yaml merge-key processing (<<) by repeating the same alias many times in a merge sequence. This causes quadratic parse-time behavior relative to input size and can block a Node.js worker/event loop for seconds with a relatively small payload (tens of KB), resulting in denial of service. The issue is in merge handling inside lib/loader.js. This vulnerability is fixed in 4.2.0 and 3.15.0.",
+      "published" : "2026-06-22T16:16:38Z",
+      "updated" : "2026-07-09T20:33:57Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "43b29d52-e8ca-48ee-8b18-057599877b81",
+      "id" : "CVE-2026-59869",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes" : [
+        407
+      ],
+      "description" : "js-yaml is a JavaScript YAML parser and dumper. From 3.0.0 before 3.15.0 and from 4.0.0 before 4.3.0, js-yaml can spend quadratic CPU time parsing a document whose size grows only linearly when a chain of mappings uses merge keys where each mapping merges the previous one. This issue is fixed in versions 3.15.0 and 4.3.0.",
+      "published" : "2026-07-08T16:16:33Z",
+      "updated" : "2026-07-13T15:05:34Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "4fa0d044-7c21-43bf-a1c0-6fe0cd0a51fb",
+      "id" : "CVE-2026-4800",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.1,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        94
+      ],
+      "description" : "Impact:\n\nThe fix for CVE-2021-23337 (https://github.com/advisories/GHSA-35jh-r3h4-6jhm) added validation for the variable option in _.template but did not apply the same validation to options.imports key names. Both paths flow into the same Function() constructor sink.\n\nWhen an application passes untrusted input as options.imports key names, an attacker can inject default-parameter expressions that execute arbitrary code at template compilation time.\n\nAdditionally, _.template uses assignInWith to merge imports, which enumerates inherited properties via for..in. If Object.prototype has been polluted by any other vector, the polluted keys are copied into the imports object and passed to Function().\n\nPatches:\n\nUsers should upgrade to version 4.18.0.\n\nWorkarounds:\n\nDo not pass untrusted input as key names in options.imports. Only use developer-controlled, static key names.",
+      "published" : "2026-03-31T20:16:29Z",
+      "updated" : "2026-07-28T13:18:48Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "3a45f46b-2d30-4a31-a7bb-ada1a0830d2f",
+      "id" : "CVE-2026-26996",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.7,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        1333
+      ],
+      "description" : "minimatch is a minimal matching utility for converting glob expressions into JavaScript RegExp objects. Versions 10.2.0 and below are vulnerable to Regular Expression Denial of Service (ReDoS) when a glob pattern contains many consecutive * wildcards followed by a literal character that doesn't appear in the test string. Each * compiles to a separate [^/]*? regex group, and when the match fails, V8's regex engine backtracks exponentially across all possible splits. The time complexity is O(4^N) where N is the number of * characters. With N=15, a single minimatch() call takes ~2 seconds. With N=34, it hangs effectively forever. Any application that passes user-controlled strings to minimatch() as the pattern argument is vulnerable to DoS. This issue has been fixed in version 10.2.1.",
+      "published" : "2026-02-20T03:16:01Z",
+      "updated" : "2026-06-17T10:26:30Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "df4fdc8f-fafc-432e-a3fa-8e495b9de5db",
+      "id" : "CVE-2026-27903",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes" : [
+        407
+      ],
+      "description" : "minimatch is a minimal matching utility for converting glob expressions into JavaScript RegExp objects. Prior to version 10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, and 3.1.3, `matchOne()` performs unbounded recursive backtracking when a glob pattern contains multiple non-adjacent `**` (GLOBSTAR) segments and the input path does not match. The time complexity is O(C(n, k)) -- binomial -- where `n` is the number of path segments and `k` is the number of globstars. With k=11 and n=30, a call to the default `minimatch()` API stalls for roughly 5 seconds. With k=13, it exceeds 15 seconds. No memoization or call budget exists to bound this behavior. Any application where an attacker can influence the glob pattern passed to `minimatch()` is vulnerable. The realistic attack surface includes build tools and task runners that accept user-supplied glob arguments (ESLint, Webpack, Rollup config), multi-tenant systems where one tenant configures glob-based rules that run in a shared process, admin or developer interfaces that accept ignore-rule or filter configuration as globs, and CI/CD pipelines that evaluate user-submitted config files containing glob patterns. An attacker who can place a crafted pattern into any of these paths can stall the Node.js event loop for tens of seconds per invocation. The pattern is 56 bytes for a 5-second stall and does not require authentication in contexts where pattern input is part of the feature. Versions 10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, and 3.1.3 fix the issue.",
+      "published" : "2026-02-26T02:16:21Z",
+      "updated" : "2026-06-17T10:27:51Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "e730cce9-154c-4d8b-ac8c-63629cc3d2be",
+      "id" : "CVE-2026-27904",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes" : [
+        1333
+      ],
+      "description" : "minimatch is a minimal matching utility for converting glob expressions into JavaScript RegExp objects. Prior to version 10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, and 3.1.4, nested `*()` extglobs produce regexps with nested unbounded quantifiers (e.g. `(?:(?:a|b)*)*`), which exhibit catastrophic backtracking in V8. With a 12-byte pattern `*(*(*(a|b)))` and an 18-byte non-matching input, `minimatch()` stalls for over 7 seconds. Adding a single nesting level or a few input characters pushes this to minutes. This is the most severe finding: it is triggered by the default `minimatch()` API with no special options, and the minimum viable pattern is only 12 bytes. The same issue affects `+()` extglobs equally. Versions 10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, and 3.1.4 fix the issue.",
+      "published" : "2026-02-26T02:16:21Z",
+      "updated" : "2026-06-17T10:27:51Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "759f6063-6d1d-4223-bc2d-5dcecae24217",
+      "id" : "CVE-2026-9753",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.1,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.2,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        1287,
+        787
+      ],
+      "description" : "The $_internalApplyOplogUpdate aggregation pipeline stage can be used to execute a document diff containing a malformed binary diff to return memory out-of-bounds or crash the server. $_internalApplyOplogUpdate can be executed by any authenticated user with access to the aggregate command.",
+      "published" : "2026-06-09T23:17:04Z",
+      "updated" : "2026-07-23T09:10:00Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "d1ce257b-8dad-4661-8a9f-b80e82767e7c",
+      "id" : "CVE-2025-14847",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.7,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        130
+      ],
+      "description" : "Mismatched length fields in Zlib compressed protocol headers may allow a read of uninitialized heap memory by an unauthenticated client. This issue affects all MongoDB Server v7.0 prior to 7.0.28 versions, MongoDB Server v8.0 versions prior to 8.0.17, MongoDB Server v8.2 versions prior to 8.2.3, MongoDB Server v6.0 versions prior to 6.0.27, MongoDB Server v5.0 versions prior to 5.0.32, MongoDB Server v4.4 versions prior to 4.4.30, MongoDB Server v4.2 versions greater than or equal to 4.2.0, MongoDB Server v4.0 versions greater than or equal to 4.0.0, and MongoDB Server v3.6 versions greater than or equal to 3.6.0.",
+      "published" : "2025-12-19T11:15:49Z",
+      "updated" : "2026-06-17T08:36:38Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "5119a3e8-3db3-4c20-a426-26b3b53eb6c7",
+      "id" : "CVE-2026-42334",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes" : [
+        74
+      ],
+      "description" : "Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Prior to 6.13.9, 7.8.9, 8.22.1, and 9.1.6, a vulnerability allows bypassing Mongoose’s sanitizeFilter query sanitization mechanism via the $nor operator. When sanitizeFilter is enabled, Mongoose wraps query operators in $eq to neutralize them. However, prior to the fix, $nor was not included in the set of logical operators that are recursively sanitized. Because $nor accepts an array (like $and and $or), and arrays do not trigger hasDollarKeys(), malicious operators such as $ne, $gt, or $regex could be injected inside a $nor clause without being sanitized. This vulnerability is fixed in 6.13.9, 7.8.9, 8.22.1, and 9.1.6.",
+      "published" : "2026-05-14T18:16:47Z",
+      "updated" : "2026-06-17T10:47:42Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "9d399914-c6b8-4590-a5f5-55fce3296aa0",
+      "id" : "CVE-2025-23061",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.0,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        94
+      ],
+      "description" : "Mongoose before 8.9.5 can improperly use a nested $where filter with a populate() match, leading to search injection. NOTE: this issue exists because of an incomplete fix for CVE-2024-53900.",
+      "published" : "2025-01-15T05:15:10Z",
+      "updated" : "2026-06-17T08:51:48Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "760b44a8-7c25-4474-937a-51ada345d0a6",
+      "id" : "CVE-2024-53900",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.1,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        }
+      ],
+      "cwes" : [
+        89
+      ],
+      "description" : "Mongoose before 8.8.3 can improperly use $where in match, leading to search injection.",
+      "published" : "2024-12-02T20:15:08Z",
+      "updated" : "2026-06-17T08:09:28Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "c55f2743-ff03-4857-9da2-48f8dcd7568b",
+      "id" : "CVE-2026-4867",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "cwes" : [
+        1333
+      ],
+      "description" : "Impact:\n\nA bad regular expression is generated any time you have three or more parameters within a single segment, separated by something that is not a period (.). For example, /:a-:b-:c or /:a-:b-:c-:d. The backtrack protection added in path-to-regexp@0.1.12 only prevents ambiguity for two parameters. With three or more, the generated lookahead does not block single separator characters, so capture groups overlap and cause catastrophic backtracking.\n\nPatches:\n\nUpgrade to path-to-regexp@0.1.13\n\nCustom regex patterns in route definitions (e.g., /:a-:b([^-/]+)-:c([^-/]+)) are not affected because they override the default capture group.\n\nWorkarounds:\n\nAll versions can be patched by providing a custom regular expression for parameters after the first in a single segment. As long as the custom regular expression does not match the text before the parameter, you will be safe. For example, change /:a-:b-:c to /:a-:b([^-/]+)-:c([^-/]+).\n\nIf paths cannot be rewritten and versions cannot be upgraded, another alternative is to limit the URL length.",
+      "published" : "2026-03-26T17:16:42Z",
+      "updated" : "2026-06-17T10:57:21Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "18b7e12c-9886-4057-98bd-31f643c4821f",
+      "id" : "CVE-2026-30951",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes" : [
+        89
+      ],
+      "description" : "Sequelize is a Node.js ORM tool. Prior to 6.37.8, there is SQL injection via unescaped cast type in JSON/JSONB where clause processing. The _traverseJSON() function splits JSON path keys on :: to extract a cast type, which is interpolated raw into CAST(... AS <type>) SQL. An attacker who controls JSON object keys can inject arbitrary SQL and exfiltrate data from any table. This vulnerability is fixed in 6.37.8.",
+      "published" : "2026-03-10T21:16:48Z",
+      "updated" : "2026-07-15T02:19:45Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "1dc82ea1-8d84-49cf-8e5a-7d85f09d47dd",
+      "id" : "CVE-2026-41988",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 3.2,
+          "severity" : "low",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:N/I:L/A:N"
+        }
+      ],
+      "cwes" : [
+        670
+      ],
+      "description" : "uuid before 14.0.0 can make unexpected writes when external output buffers are used, and the UUID version is 3, 5, or 6. In particular, UUID version 4, which is very commonly used, is unaffected by this issue.",
+      "published" : "2026-04-23T05:16:05Z",
+      "updated" : "2026-07-08T03:27:35Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "949eb1b5-db50-4c0f-a31c-e8051c1a042f",
+      "id" : "CVE-2026-41907",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.1,
+          "severity" : "high",
+          "vector" : "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:U/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+        }
+      ],
+      "cwes" : [
+        787,
+        823
+      ],
+      "description" : "uuid is for the creation of RFC9562 (formerly RFC4122) UUIDs. Prior to 14.0.0, v3, v5, and v6 accept external output buffers but do not reject out-of-range writes (small buf or large offset). This allows silent partial writes into caller-provided buffers. This vulnerability is fixed in 14.0.0.",
+      "published" : "2026-04-24T19:17:14Z",
+      "updated" : "2026-06-17T10:47:10Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "4768cf37-1d1d-4746-a6bd-7e8e2621bbbe",
+      "id" : "CVE-2026-24118",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.1,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        94,
+        693,
+        749
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to version 3.11.0, VM2 suffers from a sandbox breakout vulnerability. This allows attackers to write code which can escape from the VM2 sandbox and execute arbitrary commands on the host system. This issue has been patched in version 3.11.0.",
+      "published" : "2026-05-04T17:16:21Z",
+      "updated" : "2026-07-15T02:18:48Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "a0877206-060e-44ad-bca1-cdee6184f61d",
+      "id" : "CVE-2026-24120",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.1,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        94,
+        693,
+        807
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to version 3.10.5, the fix for CVE-2023-37466 is insufficient and can be circumvented allowing attackers to write code which can escape from the VM2 sandbox and execute arbitrary commands on the host system. This issue has been patched in version 3.10.5.",
+      "published" : "2026-05-04T17:16:21Z",
+      "updated" : "2026-07-15T02:18:48Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "22838b7c-3037-4003-8db6-d5b0870cc565",
+      "id" : "CVE-2026-24781",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.1,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        94,
+        693,
+        653
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to version 3.11.0, VM2 suffers from a sandbox breakout vulnerability through the inspect function. This allows attackers to write code which can escape from the VM2 sandbox and execute arbitrary commands on the host system. This issue has been patched in version 3.11.0.",
+      "published" : "2026-05-04T17:16:21Z",
+      "updated" : "2026-07-15T02:18:51Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "ddbd7912-91a4-41e6-bed9-4f39087f2d70",
+      "id" : "CVE-2026-26332",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 10.0,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        94,
+        693,
+        653
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to version 3.11.0, SuppressedError allows attackers to escape the sandbox and run arbitrary code. This issue has been patched in version 3.11.0.",
+      "published" : "2026-05-04T17:16:22Z",
+      "updated" : "2026-07-15T02:19:01Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "3df111fe-5575-4471-baa2-96af6908b022",
+      "id" : "CVE-2026-26956",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.8,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        693,
+        653
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. In version 3.10.4, vm2 is vulnerable to full sandbox escape with arbitrary code execution. Attacker code inside VM.run() obtains host process object and runs host commands with zero host cooperation. This issue has been patched in version 3.10.5.",
+      "published" : "2026-05-04T17:16:22Z",
+      "updated" : "2026-07-15T02:19:02Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "c9fa45ef-4695-4aaf-92de-7d7e976f650e",
+      "id" : "CVE-2026-43997",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 10.0,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        94,
+        653
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to 3.11.0, it is possible to obtain the host Object. There are various ways to use the host Object, to escape the sandbox, one example would be using HostObject.getOwnPropertySymbols to obtain Symbol(nodejs.util.inspect.custom). This vulnerability is fixed in 3.11.0.",
+      "published" : "2026-05-13T18:16:16Z",
+      "updated" : "2026-07-15T02:21:47Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "ff62a1d3-c2dd-4da8-bda4-d60ec3d95bb5",
+      "id" : "CVE-2026-43999",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.9,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        863,
+        829
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to 3.11.0, NodeVM's builtin allowlist can be bypassed when the module builtin is allowed (including via the '*' wildcard). The module builtin exposes Node's Module._load(), which loads any module by name directly in the host context, completely bypassing vm2's builtin restriction. This allows sandboxed code to load excluded builtins like child_process and achieve remote code execution. This vulnerability is fixed in 3.11.0.",
+      "published" : "2026-05-13T18:16:16Z",
+      "updated" : "2026-07-15T02:21:47Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "a9d12013-2deb-4454-84d9-bbc13eb9ad11",
+      "id" : "CVE-2026-44000",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.2,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N"
+        }
+      ],
+      "cwes" : [
+        693
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to 3.11.0, a sandbox boundary violation in vm2 allows host object identity to cross into the sandbox through host Promise resolution. When a host-side Promise that resolves to a host object is exposed to the sandbox, the value delivered to the sandbox .then() callback preserves host identity. This allows the sandbox to interact with the host object directly, including performing identity checks using host-side WeakMap and mutating host object state from inside the sandbox. This behavior occurs because the Promise fulfillment wrapper uses ensureThis() instead of the stronger cross-realm conversion path (from() / proxy wrapping). If no prototype mapping is found, ensureThis() returns the original object. As a result, objects resolved by host Promises can cross the sandbox boundary without proper isolation. This vulnerability is fixed in 3.11.0.",
+      "published" : "2026-05-13T18:16:16Z",
+      "updated" : "2026-06-17T10:50:11Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "21e69944-4092-4c8c-9a5a-f2b49c02167d",
+      "id" : "CVE-2026-44001",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.6,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        }
+      ],
+      "cwes" : [
+        248
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to 3.11.0, a sandbox escape vulnerability in vm2 v3.10.5 allows any sandboxed code to crash the host Node.js process via a single Promise constructor that triggers an unhandled rejection propagating to the host. The fix for CVE-2026-22709 (v3.10.2) only sanitized the onRejected callback in .then() and .catch() overrides and did not address the executor-to-unhandledRejection path. This vulnerability is fixed in 3.11.0.",
+      "published" : "2026-05-13T18:16:16Z",
+      "updated" : "2026-07-15T02:21:47Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "dc03641b-9258-4123-8523-ac9cc710fd69",
+      "id" : "CVE-2026-44002",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 5.8,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N"
+        }
+      ],
+      "cwes" : [
+        209
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to 3.11.0, vm2's CallSite wrapper class (intended as a safe wrapper for V8's native CallSite) blocks getThis() and getFunction() to prevent host object leakage, but allows getFileName() to return unsanitized host absolute paths. Any sandboxed code can extract the full directory structure, library paths, and framework versions of the host server. This vulnerability is fixed in 3.11.0.",
+      "published" : "2026-05-13T18:16:16Z",
+      "updated" : "2026-06-17T10:50:11Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "549585aa-d8ca-4d30-af6f-459d6d55ba81",
+      "id" : "CVE-2026-44003",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 5.8,
+          "severity" : "medium",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N"
+        }
+      ],
+      "cwes" : [
+        693
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to 3.11.0, vm2's code transformer has a performance optimization that skips AST analysis when the code does not contain catch, import, or async keywords. This fast-path bypass allows sandboxed code to directly access the internal VM2_INTERNAL_STATE_DO_NOT_USE_OR_PROGRAM_WILL_FAIL variable, which exposes internal security functions (handleException, wrapWith, import). This vulnerability is fixed in 3.11.0.",
+      "published" : "2026-05-13T18:16:16Z",
+      "updated" : "2026-06-17T10:50:11Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "cd2eb7e8-2cc4-46fa-9018-c85cbe62e51f",
+      "id" : "CVE-2026-44004",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 8.6,
+          "severity" : "high",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        }
+      ],
+      "cwes" : [
+        770,
+        1285
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to 3.11.0, sandboxed code can call Buffer.alloc() with an arbitrary size to allocate memory directly on the host heap. Because Buffer.alloc is a synchronous C++ native call, vm2's timeout option cannot interrupt it. A single request can exhaust host memory and crash the process with a FATAL ERROR: Reached heap limit. This vulnerability is fixed in 3.11.0.",
+      "published" : "2026-05-13T18:16:17Z",
+      "updated" : "2026-07-15T02:21:47Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "39d8c047-2948-421d-94dc-ce53c2bf1819",
+      "id" : "CVE-2026-44005",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.8,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        94,
+        1321,
+        653
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. From 3.9.6 to 3.10.5, vm2's bridge exposes mutable proxies for real host-realm intrinsic prototypes and then forwards sandbox writes into the underlying host objects with otherReflectSet() and otherReflectDefineProperty(), which lets attacker-controlled JavaScript running in a default VM or inherited NodeVM mutate shared host Object.prototype, Array.prototype, and Function.prototype from inside the sandbox This vulnerability is fixed in 3.11.0.",
+      "published" : "2026-05-13T18:16:17Z",
+      "updated" : "2026-07-15T02:21:47Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "8b35a4f9-3b9c-4f53-abc1-32537a63972b",
+      "id" : "CVE-2026-44006",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 10.0,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        94,
+        914
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to 3.11.0, It is possible to reach BaseHandler.getPrototypeOf, which can be used to get arbitrary prototypes. This vulnerability is fixed in 3.11.0.",
+      "published" : "2026-05-13T18:16:17Z",
+      "updated" : "2026-07-15T02:21:48Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "3a6420bd-73b2-4e94-837f-e4ab8155526e",
+      "id" : "CVE-2026-44007",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.9,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        284,
+        1100
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to 3.11.1, when a NodeVM is created with nesting: true, sandbox code can unconditionally require('vm2') regardless of the outer VM's require configuration — including require: false. With access to vm2, the sandbox constructs a new inner NodeVM with its own unrestricted require settings and executes arbitrary OS commands on the host. Any application that runs untrusted code inside a NodeVM with nesting: true is fully compromised. This vulnerability is fixed in 3.11.1.",
+      "published" : "2026-05-13T18:16:17Z",
+      "updated" : "2026-07-15T02:21:48Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "97a06be6-469b-4784-9802-b5844e05c699",
+      "id" : "CVE-2026-44008",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.8,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        668,
+        1100
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to 3.11.2, the new method neutralizeArraySpeciesBatch works with objects from the other side but can call into this side via getter on the array prototype exposing objects of the wrong side into the sandbox. This can be used to get host objects and get the host Function object. This allows attackers to write code which can escape from the VM2 sandbox and execute arbitrary commands on the host system. This vulnerability is fixed in 3.11.2.",
+      "published" : "2026-05-13T18:16:17Z",
+      "updated" : "2026-07-15T02:21:48Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "58902e7d-3223-497a-8bc1-1e86c3afb55f",
+      "id" : "CVE-2026-44009",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.8,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        668,
+        653
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to 3.11.2,  This vulnerability is fixed in 3.11.2.",
+      "published" : "2026-05-13T18:16:17Z",
+      "updated" : "2026-07-15T02:21:48Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "8e8a708e-8c99-4413-8328-b4d610aa61d1",
+      "id" : "CVE-2026-45411",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.8,
+          "severity" : "critical",
+          "method" : "CVSSv31",
+          "vector" : "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        668,
+        237
+      ],
+      "description" : "vm2 is an open source vm/sandbox for Node.js. Prior to 3.11.3, it is possible to catch a host exception using the yield* expression inside an async generator. When the generator is closed using the return function, the value is awaited on and exceptions thrown in the then call will be caught by the runtime and passed to the yield* iterator as the next value. This allows attackers to write code which can escape from the VM2 sandbox and execute arbitrary commands on the host system. This vulnerability is fixed in 3.11.3.",
+      "published" : "2026-05-13T18:16:19Z",
+      "updated" : "2026-07-15T02:22:03Z",
+      "affects" : [
+        {
+          "ref" : "1a0ed72f-e86e-42cb-aefe-1f431d82cbb2"
+        }
+      ]
+    }
+  ]
+}
