@@ -31,7 +31,6 @@ jobs:
           format: cyclonedx-json
           output-file: sbom.cyclonedx.json
 
-      
       - name: Upload SBOM
         uses: actions/upload-artifact@v4
         with:
@@ -40,51 +39,51 @@ jobs:
 
       - name: Dependency scan (Grype) - fails on Critical / CVSS >= 9.0
         id: grype
-	uses: anchore/scan-action@v3
-	with:
-	  sbom: sbom.cyclonedx.json
-	  output-format: sarif
-	  severity-cutoff: critical
+	    uses: anchore/scan-action@v3
+	    with:
+	      sbom: sbom.cyclonedx.json
+	      output-format: sarif
+	      severity-cutoff: critical
           fail-build: true
 
       - name: Upload Grype SARIF report
-	if: always()
-	uses: actions/upload-artifact@v4
-	with:
-	  name: grype-results
-	  path: ${{ steps.grype.outputs.sarif}}
+	    if: always()
+    	uses: actions/upload-artifact@v4
+	    with:
+	      name: grype-results
+	      path: ${{ steps.grype.outputs.sarif}}
 
       - name: SAST scan (Snyk) - fails on Critical findings
         if: always()
         env: 
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN}}
-	run: |
- 	   npm install -g snyk
-	   snyk test --json > snyk-results.json || true
-  	   cat snyk-results.json
-       	   snyk test --severity-threshold=critical
+	    run: |
+ 	      npm install -g snyk
+	      snyk test --json > snyk-results.json || true
+  	      cat snyk-results.json
+       	  snyk test --severity-threshold=critical
 
        - name: Upload Snyk report
          if: always()
-	 uses: actions/upload-artifact@v4
-	 with:
-	   name: snyk-results
+	     uses: actions/upload-artifact@v4
+	     with:
+	       name: snyk-results
            path: snyk-results.json
 
        - name: upload manual DAST?SBOM evidence (screenshot, notes)
-  	 if: always()
-  	 uses: actions/upload-artifact@v4
-	 with:
-	   name: evidence-screenshots
+  	     if: always()
+  	     uses: actions/upload-artifact@v4
+	     with:
+	       name: evidence-screenshots
        	   path: screenshot/
-	   if-no-files-found: ignore
+	      if-no-files-found: ignore
 
        - name: Write job summary
- 	 if: always()
-	 run: |
+ 	     if: always()
+	     run: |
       	   echo "## Security Scan Summary" >> "$GITHUB_STEP_SUMMARY"
-	   echo "- SBOM: sbom.cyclonedx.json (artifact: sbom)" >> "$GITHUB_STEP_SUMMARY"
-	   echo "- Grype SCA results (artifact: grype-results)" >> "$GITHUB_STEP_SUMMARY"
+	       echo "- SBOM: sbom.cyclonedx.json (artifact: sbom)" >> "$GITHUB_STEP_SUMMARY"
+	       echo "- Grype SCA results (artifact: grype-results)" >> "$GITHUB_STEP_SUMMARY"
 	   echo "- Snyk SAST results (artifact: snyk-results)" >> "$GITHUB_STEP_SUMMARY"
 	   echo "- Manual DAST/SBOM evidence screenshots, if present (artifact: evidence-screenshots)" >> "$GITHUB_STEP_SUMMARY"
 	   echo "- Policy: build fails on any Critical finding /CVSS >= 9.0" >> "$GITHUB_STEP_SUMMARY"
