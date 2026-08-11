@@ -24,23 +24,16 @@ The findings were consolidated into a prioritized mitigation strategy, and a CI/
 
 ## Table of Conetents
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+1. [Introduction](#1-introduction)
+2. [Methodology](#2-methodology)
+3. [SBOM Analysis](#3-sbom-analysis)
+4. [Dependency Vulnerability Analysis (SCA)](#4-dependency-vulnerability-analysis-sca)
+5. [Static Analysis Results (SAST)](#5-static-analysis-results-sast)
+6. [Dynamic Analysis Results (DAST)](#6-dynamic-analysis-results-dast)
+7. [Automation with GitHub Actions](#7-automation-with-github-actions)
+8. [Mitigation Strategy](#8-mitigation-strategy)
+9. [Conclusion](#9-conclusion)
+10. [References](#references)
 
 
 ---
@@ -96,7 +89,7 @@ Syft (Anchore) was used to generate a Software Bill oF Materials for the DVWS-No
 
 ### 3.2 Summary Statistics
 
-| Metri | Value |
+| Metric | Value |
 |---|---|
 | Total components in SBOM | 530 |
 | SBOM format | CycloneDX JSON |
@@ -106,7 +99,6 @@ Syft (Anchore) was used to generate a Software Bill oF Materials for the DVWS-No
 The SBOM was the foundation for the rest of the assessment: it was fed into Dependency-Track for continuous SCA, and its component/version list was cross-referenced against the Snyk SAST findings.
 
 ![Syft SBOM generation command](21_dvws_sbom.png) *Figure 1. Syft SBOM generation via Docker*
-
 
 ---
 
@@ -126,17 +118,21 @@ The SBOM (530 components) was analyzed in OWASP Dependency-Track, which correlat
 | Low | 4 |
 | Project Risk Score (Dependency-Track) | 358 |
 
-![Dependency-Track dashboard showing 530 components, 63 vulnerabilities, and a Risk score of 358](18_Dependency_Tracker.png) *Figure 1. Dependency-Track Dashboard*
+
+![Dependency-Track dashboard showing 530 components, 63 vulnerabilities, and a Risk score of 358](18_Dependency_Tracker.png) *Figure 2. Dependency-Track Dashboard*
+
 
 
 
 ### 4.2 Highest-Risk Components
 
-![Ten Components with the highest Dependency-Track risk score](19_Dependency_Tracker_vulnerbility.png) *Figure 2. Ten Components with the highest Dependency-Track risk score*
+
+![Ten Components with the highest Dependency-Track risk score](19_Dependency_Tracker_vulnerbility.png) *Figure 3. Ten Components with the highest Dependency-Track risk score*
 
 vm2 (a sandbox/VM library, risk score 146) and angular 1.8.3 (a legacy front-end dependency, risk score 80) dominate the risk profile – together they account for roughly 63% of the project’s total risk score. Vm2 in particular is notable because its historical CVEs are sandbox-escape vulnerabilities, which can translate to remote code execution if the sandboxed code path is reachable from user input.
 
-![Vulnerability list showing CVE entries](20_Dependency_tracker_component.png) *Figure 3. Vulnerability list showing CVE entries*
+
+![Vulnerability list showing CVE entries](20_Dependency_tracker_component.png) *Figure 4. Vulnerability list showing CVE entries*
 
 
 ---
@@ -172,18 +168,19 @@ The three most significant issue clusters are analysed below
 
 Overall, Snyk tested 507 dependencies and identified 121 ssues across 207 vulnerable dependency paths. Most of these issues originated from third-party packages rather than from the application's own source code. This finding is consistent with the Software Composition Analysis results discussed and shows that improving dependency management is the most important step for reducing the static security risk of DVWS-Node.
 
-![Snyk CLI terminal output](7.png)*Figure 4. Snyk CLI terminal output confirming 507 dependencies tested, 121 issues across 207 vulnerable paths, and listing the xmldom and tar issue clusters discussed above.*
+![Snyk CLI terminal output](7.png)*Figure 5. Snyk CLI terminal output confirming 507 dependencies tested, 121 issues across 207 vulnerable paths, and listing the xmldom and tar issue clusters discussed above.*
 
 
 ### 5.4 Static and Composition Anlaysis : Semgrep Appsec Platform
 
 The DVWS-Node repository was also scanned using the Semgrep AppSec Platform, which provides the first-party static code scanning and dependency scanning with reachability analysis ("Supply Chain"). Two full scans were run against the 'master' branch, each completing in under four minutes and reporting 170 total findings (47 code, 0 secrets, 123 Supply Chain).
 
-![Semgrep project scan ](23_semgrep_1.png) *Figure . Semgrep scan for the 'local-scan/dvws-node'*
 
-![Semgrep Supply Chain finding](22_semgrep.png) *Figure . Semgrep Supply Chain findings*
+![Semgrep project scan ](23_semgrep_1.png) *Figure 6. Semgrep scan for the 'local-scan/dvws-node'*
 
-![Semgrep Code finding](24_semgrep_2.png)*Figure . Semgrep Code finding*
+![Semgrep Supply Chain finding](22_semgrep.png) *Figure 7. Semgrep Supply Chain findings*
+
+![Semgrep Code finding](24_semgrep_2.png)*Figure 8. Semgrep Code finding*
 
 
 ---
@@ -199,16 +196,16 @@ Manual dynamic testing was conducted using Burp Suite Community Edition for requ
 
 Two separate, self-registered DVWS-Node accounts were used across testing, in two different browsers, to all cross-account behaviour (such as the data leakage described ) to be observed directly rather than inferred.
 
-![DVWS-Node login page, account "user"](8.png)*Figure . DVWS-Node Login page*
+![DVWS-Node login page, account "user"](8.png)*Figure 9. DVWS-Node Login page*
 
-![DVWS-Node login page, account "victim"](9.png)*Figure . DVWS-Node login page, authenticating as the test account*
+![DVWS-Node login page, account "victim"](9.png)*Figure 10. DVWS-Node login page, authenticating as the test account*
 
 
 ### 6.3 Reconnaissance
 
 Prior to exploitation, dirsearch was used to enumerate reachable static content and endpoint on the target, informing the selection of attack surfaces for subsequent manual testing.
 
-![dirsearch scan against the DVWS-Node target](10.png)*Figure 5. Dirsearch Scan against DVWS-Node target*
+![dirsearch scan against the DVWS-Node target](10.png)*Figure 11. Dirsearch Scan against DVWS-Node target*
 
 Several of the paths identified here - notably /upload.html and /search.html , correspond directly to the Path Traversal and NoSQL Injection findings reported below.
 
@@ -235,9 +232,9 @@ This is assessed as the most severe DAST finding: an authenticated user can read
 
 The file-download feature accept a 'filename' parameter that is concatenated into a filesystem path without sanitisation. Supplying a relative-path payload of '../../../etc/passwd', within an authenticated session (a valid 'auth_token' cookie), returned the contents of '/etc/passwd'.
 
-![Path Traversal via Burp Repeater](16_path_traversal_note_downloads.png) *Figure 7. Path Traversal via Burp Repeater*
+![Path Traversal via Burp Repeater](16_path_traversal_note_downloads.png) *Figure 12. Path Traversal via Burp Repeater*
 
-![Path Traversal reproduced in browser](17_path_traversal_note_downloads_web_graphic.png) *Figure 8. The same vulnerability reproduced directly in the browser*
+![Path Traversal reproduced in browser](17_path_traversal_note_downloads_web_graphic.png) *Figure 13. The same vulnerability reproduced directly in the browser*
 
 
 #### 6.4.3 Stored Cross-Site Scripting (High)
@@ -249,7 +246,7 @@ The file-upload feature accepts arbitrary file content, including an XML file ('
 
 The login form's username field reflects user input without encoding. Submitting '<script>alert("useradmin")</script>' as the username caused immediate execution of the injectsd script, prior to authentication.
 
-![Reflected XSS in login form](13_xss_ref_login_for.png) *Figure 10. Reflected XSS: a script payload in the login username  field. *
+![Reflected XSS in login form](13_xss_ref_login_for.png) *Figure 14. Reflected XSS: a script payload in the login username  field. *
 
 
 #### 6.4.5 NoSQL Injection (Medium)
@@ -263,7 +260,7 @@ This finding has a secondary broken-access-control dimension: beyond confirming 
 
 The endpoint 'GET /api/v1/info' returns detailed environment information with no authentication required, including the internal MongoDB connection string ('mongo://dvws-mong0:27017/node-dvws'), the container hostname, and Node.js/npm/Yarn version metadata.
 
-![Unauthenticated information disclosure via GET /api/v1/info](15_hidden_api_info.png)*Figure
+![Unauthenticated information disclosure via GET /api/v1/info](15_hidden_api_info.png)*Figure 15
 . Unauthenticated information disclosure via 'GET /api/v1/info', exposing the internal MongoDB connection string and environment metadata.*
 
 While this endpoint does not directly expose credentials, the disclosed internal hostname and connection topology reduce the reconnaissance effort required for a subsequent, more targeted attack, and should be treated as a genuine information-disclosure weakness rather than a purely cosmetic issue.
