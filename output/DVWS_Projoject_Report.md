@@ -363,8 +363,8 @@ The complete workflow definition, security.yml, is reproduced below
            path: ${{ steps.grype.outputs.sarif}}
 
       - name: SAST scan (Snyk) - fails on Critical findings
-        if: always()
-   ]    env: 
+        if: always()    
+        env: 
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN}}
         run: |
           npm install -g snyk
