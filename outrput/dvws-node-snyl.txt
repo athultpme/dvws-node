@@ -1,0 +1,371 @@
+
+Testing /home/kali/component_security/dvws-node...
+
+Tested 507 dependencies for known issues, found 121 issues, 207 vulnerable paths.
+
+
+Issues to fix by upgrading:
+
+  Upgrade @xmldom/xmldom@0.8.11 to @xmldom/xmldom@0.8.13 to fix
+  ✗ XML Injection [High Severity][https://security.snyk.io/vuln/SNYK-JS-XMLDOMXMLDOM-15869636] in @xmldom/xmldom@0.8.11
+    introduced by @xmldom/xmldom@0.8.11
+  ✗ XML Injection [High Severity][https://security.snyk.io/vuln/SNYK-JS-XMLDOMXMLDOM-16133132] in @xmldom/xmldom@0.8.11
+    introduced by @xmldom/xmldom@0.8.11
+  ✗ Uncontrolled Recursion [High Severity][https://security.snyk.io/vuln/SNYK-JS-XMLDOMXMLDOM-16134530] in @xmldom/xmldom@0.8.11
+    introduced by @xmldom/xmldom@0.8.11
+  ✗ XML Injection [High Severity][https://security.snyk.io/vuln/SNYK-JS-XMLDOMXMLDOM-16134549] in @xmldom/xmldom@0.8.11
+    introduced by @xmldom/xmldom@0.8.11
+  ✗ XML Injection [High Severity][https://security.snyk.io/vuln/SNYK-JS-XMLDOMXMLDOM-16134552] in @xmldom/xmldom@0.8.11
+    introduced by @xmldom/xmldom@0.8.11
+
+  Upgrade bcrypt@5.1.1 to bcrypt@6.0.0 to fix
+  ✗ Missing Release of Resource after Effective Lifetime [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-INFLIGHT-6095116] in inflight@1.0.6
+    introduced by swagger-autogen@2.23.7 > glob@7.2.3 > inflight@1.0.6 and 3 other path(s)
+  ✗ Directory Traversal [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-15032660] in tar@6.2.1
+    introduced by bcrypt@5.1.1 > @mapbox/node-pre-gyp@1.0.11 > tar@6.2.1 and 1 other path(s)
+  ✗ Improper Handling of Unicode Encoding [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-15038581] in tar@6.2.1
+    introduced by bcrypt@5.1.1 > @mapbox/node-pre-gyp@1.0.11 > tar@6.2.1 and 1 other path(s)
+  ✗ Directory Traversal [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-15127355] in tar@6.2.1
+    introduced by bcrypt@5.1.1 > @mapbox/node-pre-gyp@1.0.11 > tar@6.2.1 and 1 other path(s)
+  ✗ Interpretation Conflict [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-17342362] in tar@6.2.1
+    introduced by bcrypt@5.1.1 > @mapbox/node-pre-gyp@1.0.11 > tar@6.2.1 and 1 other path(s)
+  ✗ Incorrect Type Conversion or Cast (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-17909104] in tar@6.2.1
+    introduced by bcrypt@5.1.1 > @mapbox/node-pre-gyp@1.0.11 > tar@6.2.1 and 1 other path(s)
+  ✗ Uncaught Exception (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-17909225] in tar@6.2.1
+    introduced by bcrypt@5.1.1 > @mapbox/node-pre-gyp@1.0.11 > tar@6.2.1 and 1 other path(s)
+  ✗ Uncontrolled Recursion (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-18319500] in tar@6.2.1
+    introduced by bcrypt@5.1.1 > @mapbox/node-pre-gyp@1.0.11 > tar@6.2.1 and 1 other path(s)
+  ✗ Infinite loop [High Severity][https://security.snyk.io/vuln/SNYK-JS-BRACEEXPANSION-15789759] in brace-expansion@1.1.12
+    introduced by swagger-autogen@2.23.7 > glob@7.2.3 > minimatch@3.1.2 > brace-expansion@1.1.12 and 4 other path(s)
+  ✗ Inefficient Algorithmic Complexity [High Severity][https://security.snyk.io/vuln/SNYK-JS-BRACEEXPANSION-17706650] in brace-expansion@1.1.12
+    introduced by swagger-autogen@2.23.7 > glob@7.2.3 > minimatch@3.1.2 > brace-expansion@1.1.12 and 4 other path(s)
+  ✗ Allocation of Resources Without Limits or Throttling (new) [High Severity][https://security.snyk.io/vuln/SNYK-JS-BRACEEXPANSION-18313044] in brace-expansion@1.1.12
+    introduced by swagger-autogen@2.23.7 > glob@7.2.3 > minimatch@3.1.2 > brace-expansion@1.1.12 and 4 other path(s)
+  ✗ Regular Expression Denial of Service (ReDoS) [High Severity][https://security.snyk.io/vuln/SNYK-JS-MINIMATCH-15309438] in minimatch@3.1.2
+    introduced by swagger-autogen@2.23.7 > glob@7.2.3 > minimatch@3.1.2 and 4 other path(s)
+  ✗ Inefficient Algorithmic Complexity [High Severity][https://security.snyk.io/vuln/SNYK-JS-MINIMATCH-15353389] in minimatch@3.1.2
+    introduced by swagger-autogen@2.23.7 > glob@7.2.3 > minimatch@3.1.2 and 4 other path(s)
+  ✗ Directory Traversal [High Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-15307072] in tar@6.2.1
+    introduced by bcrypt@5.1.1 > @mapbox/node-pre-gyp@1.0.11 > tar@6.2.1 and 1 other path(s)
+  ✗ Symlink Attack [High Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-15416075] in tar@6.2.1
+    introduced by bcrypt@5.1.1 > @mapbox/node-pre-gyp@1.0.11 > tar@6.2.1 and 1 other path(s)
+  ✗ Symlink Attack [High Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-15456201] in tar@6.2.1
+    introduced by bcrypt@5.1.1 > @mapbox/node-pre-gyp@1.0.11 > tar@6.2.1 and 1 other path(s)
+  ✗ Infinite loop (new) [High Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-17909068] in tar@6.2.1
+    introduced by bcrypt@5.1.1 > @mapbox/node-pre-gyp@1.0.11 > tar@6.2.1 and 1 other path(s)
+  ✗ Allocation of Resources Without Limits or Throttling (new) [High Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-17909152] in tar@6.2.1
+    introduced by bcrypt@5.1.1 > @mapbox/node-pre-gyp@1.0.11 > tar@6.2.1 and 1 other path(s)
+
+  Upgrade body-parser@1.20.4 to body-parser@1.20.6 to fix
+  ✗ Allocation of Resources Without Limits or Throttling (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-BODYPARSER-17906397] in body-parser@1.20.4
+    introduced by body-parser@1.20.4 and 3 other path(s)
+  ✗ NULL Pointer Dereference [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-QS-16721866] in qs@6.14.2
+    introduced by body-parser@1.20.4 > qs@6.14.2 and 5 other path(s)
+
+  Upgrade express@4.22.1 to express@4.22.2 to fix
+  ✗ NULL Pointer Dereference [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-QS-16721866] in qs@6.14.2
+    introduced by body-parser@1.20.4 > qs@6.14.2 and 5 other path(s)
+
+  Upgrade http-proxy-middleware@3.0.5 to http-proxy-middleware@3.0.7 to fix
+  ✗ CRLF Injection [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-HTTPPROXYMIDDLEWARE-17375007] in http-proxy-middleware@3.0.5
+    introduced by http-proxy-middleware@3.0.5
+  ✗ Partial String Comparison [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-HTTPPROXYMIDDLEWARE-17375053] in http-proxy-middleware@3.0.5
+    introduced by http-proxy-middleware@3.0.5
+
+  Upgrade mongoose@7.8.8 to mongoose@7.8.10 to fix
+  ✗ Prototype Pollution (new) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-MONGOOSE-18319533] in mongoose@7.8.8
+    introduced by mongoose@7.8.8 and 1 other path(s)
+  ✗ Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection') [High Severity][https://security.snyk.io/vuln/SNYK-JS-MONGOOSE-16425765] in mongoose@7.8.8
+    introduced by mongoose@7.8.8 and 1 other path(s)
+
+  Upgrade sequelize@6.37.7 to sequelize@6.37.8 to fix
+  ✗ SQL Injection [High Severity][https://security.snyk.io/vuln/SNYK-JS-SEQUELIZE-15456219] in sequelize@6.37.7
+    introduced by sequelize@6.37.7
+
+
+Issues with no direct upgrade or patch:
+  ✗ Incomplete Filtering of Special Elements [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-ANGULAR-17458840] in angular@1.8.3
+    introduced by angular@1.8.3
+  No upgrade or patch available
+  ✗ Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-ANGULAR-2772735] in angular@1.8.3
+    introduced by angular@1.8.3
+  No upgrade or patch available
+  ✗ Cross-site Scripting (XSS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-ANGULAR-2949781] in angular@1.8.3
+    introduced by angular@1.8.3
+  No upgrade or patch available
+  ✗ Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-ANGULAR-3373044] in angular@1.8.3
+    introduced by angular@1.8.3
+  No upgrade or patch available
+  ✗ Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-ANGULAR-3373046] in angular@1.8.3
+    introduced by angular@1.8.3
+  No upgrade or patch available
+  ✗ Regular Expression Denial of Service (ReDoS) [High Severity][https://security.snyk.io/vuln/SNYK-JS-ANGULAR-6091113] in angular@1.8.3
+    introduced by angular@1.8.3
+  No upgrade or patch available
+  ✗ Incomplete Filtering of Special Elements [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-ANGULAR-7924842] in angular@1.8.3
+    introduced by angular@1.8.3
+  No upgrade or patch available
+  ✗ Improper Validation of Unsafe Equivalence in Input [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-ANGULAR-7924843] in angular@1.8.3
+    introduced by angular@1.8.3
+  No upgrade or patch available
+  ✗ Incomplete Filtering of Special Elements [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-ANGULAR-9919773] in angular@1.8.3
+    introduced by angular@1.8.3
+  No upgrade or patch available
+  ✗ Arbitrary Code Injection [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-APOLLOPROTOBUFJS-16321047] in @apollo/protobufjs@1.2.6
+    introduced by apollo-server@3.13.0 > apollo-server-core@3.13.0 > @apollo/utils.usagereporting@1.0.1 > @apollo/usage-reporting-protobuf@4.1.1 > @apollo/protobufjs@1.2.7 and 8 other path(s)
+  This issue was fixed in versions: 1.2.8
+  ✗ Regular Expression Denial of Service (ReDoS) [High Severity][https://security.snyk.io/vuln/SNYK-JS-APOLLOSERVER-15208674] in apollo-server@3.13.0
+    introduced by apollo-server@3.13.0
+  No upgrade or patch available
+  ✗ Information Exposure [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-APOLLOSERVERCORE-15790567] in apollo-server-core@3.13.0
+    introduced by apollo-server@3.13.0 > apollo-server-core@3.13.0 and 1 other path(s)
+  No upgrade or patch available
+  ✗ Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-DIFF-14917201] in diff@5.2.0
+    introduced by mocha@10.8.2 > diff@5.2.0
+  This issue was fixed in versions: 3.5.1, 4.0.4, 5.2.2, 8.0.3
+  ✗ Prototype Pollution [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-DOTTIE-15360180] in dottie@2.0.6
+    introduced by sequelize@6.37.7 > dottie@2.0.6
+  This issue was fixed in versions: 2.0.7
+  ✗ Arbitrary File Upload [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-EXPRESSFILEUPLOAD-2635697] in express-fileupload@1.5.2
+    introduced by express-fileupload@1.5.2
+  No upgrade or patch available
+  ✗ Arbitrary File Upload [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-EXPRESSFILEUPLOAD-2635946] in express-fileupload@1.5.2
+    introduced by express-fileupload@1.5.2
+  No upgrade or patch available
+  ✗ Improper Removal of Sensitive Information Before Storage or Transfer [High Severity][https://security.snyk.io/vuln/SNYK-JS-FOLLOWREDIRECTS-16032162] in follow-redirects@1.15.11
+    introduced by http-proxy-middleware@3.0.5 > http-proxy@1.18.1 > follow-redirects@1.15.11
+  This issue was fixed in versions: 1.16.0
+  ✗ Server-side Request Forgery (SSRF) [High Severity][https://security.snyk.io/vuln/SNYK-JS-IP-12704893] in ip@1.1.9
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > ip@1.1.9
+  No upgrade or patch available
+  ✗ Server-side Request Forgery (SSRF) [High Severity][https://security.snyk.io/vuln/SNYK-JS-IP-12761655] in ip@1.1.9
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > ip@1.1.9
+  No upgrade or patch available
+  ✗ Server-Side Request Forgery (SSRF) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-IP-7148531] in ip@1.1.9
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > ip@1.1.9
+  No upgrade or patch available
+  ✗ Cross-site Scripting (XSS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-IPADDRESS-16636412] in ip-address@10.1.0
+    introduced by mongoose@7.8.8 > mongodb@5.9.2 > socks@2.8.7 > ip-address@10.1.0 and 2 other path(s)
+  This issue was fixed in versions: 10.1.1
+  ✗ Inefficient Algorithmic Complexity [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-JSYAML-17342520] in js-yaml@4.1.1
+    introduced by mocha@10.8.2 > js-yaml@4.1.1
+  This issue was fixed in versions: 4.2.0
+  ✗ Inefficient Algorithmic Complexity [High Severity][https://security.snyk.io/vuln/SNYK-JS-JSYAML-17900054] in js-yaml@4.1.1
+    introduced by mocha@10.8.2 > js-yaml@4.1.1
+  This issue was fixed in versions: 3.15.0, 4.3.0
+  ✗ Denial of Service (DoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557301] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Use After Free [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557387] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Integer Overflow or Wraparound [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557388] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Buffer Under-read [Low Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557392] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Buffer Overflow [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557393] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Use After Free [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557394] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Stack-based Buffer Overflow [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557395] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ NULL Pointer Dereference [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557396] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Out-of-bounds Read [Low Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557397] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Use After Free [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557398] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Out-of-bounds Write [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557399] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Improper Input Validation [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557400] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Denial of Service (DoS) [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557426] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Memory Leak [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557427] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Out-of-bounds Read [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557438] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Double Free [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557442] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Heap-based Buffer Overflow [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557443] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Use After Free [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557444] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Use After Free [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10557445] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Stack-based Buffer Overflow [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10674175] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Expired Pointer Dereference [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10674180] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Expired Pointer Dereference [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10674183] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Stack-based Buffer Overflow [Low Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10674187] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Out-of-bounds Read [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-10674191] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ NULL Pointer Dereference [High Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-14723210] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Remote Code Execution (RCE) [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-6091649] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Type Confusion [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-LIBXMLJS-6807576] in libxmljs@1.0.11
+    introduced by libxmljs@1.0.11
+  No upgrade or patch available
+  ✗ Prototype Pollution [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-LODASH-15869619] in lodash@4.17.23
+    introduced by sequelize@6.37.7 > lodash@4.17.23
+  This issue was fixed in versions: 4.18.1
+  ✗ Arbitrary Code Injection [High Severity][https://security.snyk.io/vuln/SNYK-JS-LODASH-15869625] in lodash@4.17.23
+    introduced by sequelize@6.37.7 > lodash@4.17.23
+  This issue was fixed in versions: 4.18.1
+  ✗ Improper Neutralization of Special Elements in Data Query Logic [High Severity][https://security.snyk.io/vuln/SNYK-JS-MONGOOSE-8446504] in mongoose@5.13.23
+    introduced by mongoose-super-increment@1.1.0 > mongoose@5.13.23
+  This issue was fixed in versions: 6.13.5, 7.8.3, 8.8.3
+  ✗ Improper Neutralization of Special Elements in Data Query Logic [High Severity][https://security.snyk.io/vuln/SNYK-JS-MONGOOSE-8623536] in mongoose@5.13.23
+    introduced by mongoose-super-increment@1.1.0 > mongoose@5.13.23
+  This issue was fixed in versions: 6.13.6, 7.8.4, 8.9.5
+  ✗ Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-PATHTOREGEXP-15789761] in path-to-regexp@0.1.12
+    introduced by express@4.22.1 > path-to-regexp@0.1.12 and 1 other path(s)
+  This issue was fixed in versions: 0.1.13
+  ✗ Improper Check for Unusual or Exceptional Conditions [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-PROTOBUFJSCODEGEN-16643292] in @protobufjs/codegen@2.0.4
+    introduced by apollo-server@3.13.0 > apollo-server-core@3.13.0 > apollo-reporting-protobuf@3.4.0 > @apollo/protobufjs@1.2.6 > @protobufjs/codegen@2.0.4 and 8 other path(s)
+  This issue was fixed in versions: 2.0.5
+  ✗ Improper Handling of Unicode Encoding [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-PROTOBUFJSUTF8-16643215] in @protobufjs/utf8@1.1.0
+    introduced by apollo-server@3.13.0 > apollo-server-core@3.13.0 > apollo-reporting-protobuf@3.4.0 > @apollo/protobufjs@1.2.6 > @protobufjs/utf8@1.1.0 and 8 other path(s)
+  This issue was fixed in versions: 1.1.1
+  ✗ Arbitrary Code Injection [High Severity][https://security.snyk.io/vuln/SNYK-JS-PROTOBUFJSUTF8-16643422] in @protobufjs/utf8@1.1.0
+    introduced by apollo-server@3.13.0 > apollo-server-core@3.13.0 > apollo-reporting-protobuf@3.4.0 > @apollo/protobufjs@1.2.6 > @protobufjs/utf8@1.1.0 and 8 other path(s)
+  This issue was fixed in versions: 1.1.1
+  ✗ Allocation of Resources Without Limits or Throttling [High Severity][https://security.snyk.io/vuln/SNYK-JS-SERIALIZEJAVASCRIPT-15809196] in serialize-javascript@6.0.2
+    introduced by mocha@10.8.2 > serialize-javascript@6.0.2
+  This issue was fixed in versions: 7.0.5
+  ✗ Arbitrary Code Injection [High Severity][https://security.snyk.io/vuln/SNYK-JS-SERIALIZEJAVASCRIPT-570062] in serialize-javascript@6.0.2
+    introduced by mocha@10.8.2 > serialize-javascript@6.0.2
+  This issue was fixed in versions: 7.0.3
+  ✗ Incorrect Control Flow Scoping [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-TOOTALLNATEONCE-15250612] in @tootallnate/once@1.1.2
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > http-proxy-agent@4.0.1 > @tootallnate/once@1.1.2 and 3 other path(s)
+  This issue was fixed in versions: 2.0.1, 3.0.1
+  ✗ Improper Validation of Specified Index, Position, or Offset in Input [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-UUID-16133035] in uuid@8.3.2
+    introduced by apollo-server@3.13.0 > apollo-server-core@3.13.0 > uuid@9.0.1 and 2 other path(s)
+  This issue was fixed in versions: 11.1.1, 14.0.0
+  ✗ Arbitrary Code Injection [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16419418] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Arbitrary Code Injection [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16419531] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.10.5
+  ✗ Arbitrary Code Injection [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16419533] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Arbitrary Code Injection [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16419537] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.10.5
+  ✗ Arbitrary Code Injection [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16419539] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Arbitrary Code Injection [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16438371] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Arbitrary Code Injection [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16438924] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Arbitrary Code Injection [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16438932] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Uncaught Exception [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16438945] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Arbitrary Code Injection [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16438950] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Allocation of Resources Without Limits or Throttling [High Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16438976] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Information Exposure [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16439004] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Improper Isolation or Compartmentalization [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16439006] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Improper Isolation or Compartmentalization [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16439008] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Improper Isolation or Compartmentalization [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16439011] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Symlink Attack [High Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16439013] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.0
+  ✗ Improper Isolation or Compartmentalization [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16624522] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.2
+  ✗ Arbitrary Code Injection [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16624524] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.2
+  ✗ Arbitrary Code Injection [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-16673571] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.3
+  ✗ Incomplete List of Disallowed Inputs [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-17111172] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.4
+  ✗ Improper Control of Dynamically-Managed Code Resources [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-17111264] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.4
+  ✗ Incomplete List of Disallowed Inputs [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-17111274] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.4
+  ✗ Improper Control of Dynamically-Managed Code Resources [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-17111317] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.4
+  ✗ Improper Control of Dynamically-Managed Code Resources [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-17111319] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.4
+  ✗ Improper Control of Dynamically-Managed Code Resources [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-17111321] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.4
+  ✗ Improperly Controlled Modification of Dynamically-Determined Object Attributes [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-17111325] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.4
+  ✗ Protection Mechanism Failure [High Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-17111337] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.4
+  ✗ Incomplete List of Disallowed Inputs [High Severity][https://security.snyk.io/vuln/SNYK-JS-VM2-17111339] in vm2@3.10.3
+    introduced by superagent-proxy@3.0.0 > proxy-agent@5.0.0 > pac-proxy-agent@5.0.0 > pac-resolver@5.0.1 > degenerator@3.0.4 > vm2@3.10.3
+  This issue was fixed in versions: 3.11.4
+  ✗ Arbitrary Code Execution [Critical Severity][https://security.snyk.io/vuln/npm:node-serialize:20170208] in node-serialize@0.0.4
+    introduced by node-serialize@0.0.4
+  No upgrade or patch available
+
+
+
+Organization:      athultpme-cnSwtku3vh9iPZstBaCkm9
+Package manager:   npm
+Target file:       package-lock.json
+Project name:      dvws-node
+Open source:       no
+Project path:      /home/kali/component_security/dvws-node
+Licenses:          enabled
+
+
