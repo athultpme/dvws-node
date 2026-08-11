@@ -307,18 +307,18 @@ The complete workflow definition, security.yml, is reproduced below
 
 '''
 
-  name: Security Pipeline
+   name: Security Pipeline
 
-  on:
-  push:
-  pull_request:
+   on:
+   push:
+   pull_request:
 
-  jobs:
-    security-check:
-    name: SBOM + SCA + SAST with policy gate
-    runs-on: ubuntu-latest
+   jobs:
+     security-check:
+     name: SBOM + SCA + SAST with policy gate
+     runs-on: ubuntu-latest
     
-  steps:
+   steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       
