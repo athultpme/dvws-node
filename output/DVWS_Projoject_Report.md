@@ -299,7 +299,111 @@ To integrate security testing into the software development lifecycle, an automa
 - Enforces a security policy gate, whereby the build fails if any Critical-severity finding (CVSS >= 9.0) is reported by either Grype or Snyk.
 - Publishes the SBOM, Grype results, and Snyk results as downloadable workflow artefacts, together with a run summary.
 
----
+### 7.1 Workflow Definition 
+
+The complete workflow definition, security.yml, is reproduced below
+
+'''
+name: Security Pipeline
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  security-check:
+    name: SBOM + SCA + SAST with policy gate
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - name: Install dependencies & build
+        run: | 
+          npm ci
+          npm run build --if-present
+      
+      - name: Generate SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          path: .
+          format: cyclonedx-json
+          output-file: sbom.cyclonedx.json
+
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: sbom.cyclonedx.json
+
+      - name: Dependency scan (Grype) - fails on Critical / CVSS >= 9.0
+        id: grype
+        uses: anchore/scan-action@v7
+        with:
+          sbom: sbom.cyclonedx.json
+          output-format: sarif
+          severity-cutoff: critical
+          fail-build: true
+
+      - name: Upload Grype SARIF report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grype-results
+          path: ${{ steps.grype.outputs.sarif}}
+
+      - name: SAST scan (Snyk) - fails on Critical findings
+        if: always()
+        env: 
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN}}
+        run: |
+          npm install -g snyk
+          snyk test --json > snyk-results.json || true
+          cat snyk-results.json
+          snyk test --severity-threshold=critical
+
+          - name: Upload Snyk report
+          if: always()
+          uses: actions/upload-artifact@v4
+          with:
+           name: snyk-results
+           path: snyk-results.json
+
+          - name: upload manual DAST?SBOM evidence (screenshot, notes)
+            if: always()
+            uses: actions/upload-artifact@v4
+            with:
+              name: evidence-screenshots
+              path: screenshot/
+              if-no-files-found: ignore
+
+          - name: Write job summary
+            if: always()
+            run: |
+              echo "## Security Scan Summary" >> "$GITHUB_STEP_SUMMARY"
+              echo "- SBOM: sbom.cyclonedx.json (artifact: sbom)" >> "$GITHUB_STEP_SUMMARY"
+              echo "- Grype SCA results (artifact: grype-results)" >> "$GITHUB_STEP_SUMMARY"
+              echo "- Snyk SAST results (artifact: snyk-results)" >> "$GITHUB_STEP_SUMMARY"
+              echo "- Manual DAST/SBOM evidence screenshots, if present (artifact: evidence-screenshots)" >> "$GITHUB_STEP_SUMMARY"
+              echo "- Policy: build fails on any Critical finding /CVSS >= 9.0" >> "$GITHUB_STEP_SUMMARY"
+'''
+ 
+### 7.2 Pipeline Execution Evidence
+
+The workflow was executed against the repository to validate that the policy gate behaves as designed. The run failed, as expected, on the presence of the Critical-Severity finding documented
+
+![GitHub Actions run showing the Grype and Snyk steps failing the build](25_github.png)*Figure 24. GitHub Actions run for "SBOM + SCA + SAST with policy gate"*
+
+![GitHub Actions annotation and published artifacts for the failed run](26_github_1.png)*Figure 25. Run annotations report two errors - "Found vulnerabilities with level 'critical'" confirming the Grype gate fired on a Critical finding. The Artifacts panel confirms the SBOM and grype results were published as run outputs.*
+
+This confirms two things about the pipeline's behaviour in practice: first, that the 'severity-cutoff', the Grype step does cause the job to exit non-zero (exit code 2) when a Critical-severity dependency vulnerability is present, rather than only reporting it, and second, that the SBOM and SCA results are correctly published as downloadable artefacts even though jobs as a whole failed, since the 'if: always()' condition on the upload steps ensure evidence is retained regardless of the gate's outcome.
 
 
 ## 8. Mitigation Strategy 
