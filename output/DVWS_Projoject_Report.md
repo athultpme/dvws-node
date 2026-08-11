@@ -246,7 +246,7 @@ The file-upload feature accepts arbitrary file content, including an XML file ('
 
 The login form's username field reflects user input without encoding. Submitting '<script>alert("useradmin")</script>' as the username caused immediate execution of the injectsd script, prior to authentication.
 
-![Reflected XSS in login form](13_xss_ref_login_for.png)*Figure 14. Reflected XSS: a script payload in the login username field. *
+![Reflected XSS in login form](13_xss_ref_login_for.png)*Figure 14. Reflected XSS: a script payload in the login username field*
 
 
 #### 6.4.5 NoSQL Injection (Medium)
@@ -258,7 +258,7 @@ This finding has a secondary broken-access-control dimension: beyond confirming 
 
 #### 6.4.6 Information Disclosure (Medium)
 
-The endpoint 'GET /api/v1/info' returns detailed environment information with no authentication required, including the internal MongoDB connection string ('mongo://dvws-mong0:27017/node-dvws'), the container hostname, and Node.js/npm/Yarn version metadata.
+The endpoint 'GET /api/v1/info' returns detailed environment information with no authentication required, including the internal MongoDB connection string ('mongo://dvws-mongo:27017/node-dvws'), the container hostname, and Node.js/npm/Yarn version metadata.
 
 ![Unauthenticated information disclosure via GET /api/v1/info](15_hidden_api_info.png)*Figure 15
 . Unauthenticated information disclosure via 'GET /api/v1/info', exposing the internal MongoDB connection string and environment metadata.*

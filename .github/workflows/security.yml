@@ -2,13 +2,11 @@ name: Security Pipeline
 
 on:
   push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
-  workflow_dispatch:
 
 jobs:
   security-check:
+    name: SBOM + SCA + SAST with policy gate
     runs-on: ubuntu-latest
     
     steps:
@@ -21,27 +19,72 @@ jobs:
           node-version: '22'
           cache: 'npm'
       
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Run npm audit
-        run: npm audit || true
+      - name: Install dependencies & build
+        run: | 
+          npm ci
+          npm run build --if-present
       
       - name: Generate SBOM
-        uses: anchore/sbom-action@v0.18.0
+        uses: anchore/sbom-action@v0
         with:
           path: .
           format: cyclonedx-json
-          output-file: sbom.json
+          output-file: sbom.cyclonedx.json
+
       
-      - name: Vulnerability scan
-        uses: anchore/scan-action@v5
-        with:
-          path: .
-          fail-build: false
-      
-      - name: Upload artifacts
+      - name: Upload SBOM
         uses: actions/upload-artifact@v4
         with:
-          name: security-reports
-          path: sbom.json
+          name: sbom
+          path: sbom.cyclonedx.json
+
+      - name: Dependency scan (Grype) - fails on Critical / CVSS >= 9.0
+        id: grype
+	uses: anchore/scan-action@7
+	with:
+	  sbom: sbom.cyclonedx.json
+	  output-format: sarif
+	  severity-cutoff: critical
+          fail-build: true
+
+      - name: Upload Grype SARIF report
+	if: always()
+	uses: actions/upload-artifact@v4
+	with:
+	  name: grype-results
+	  path: ${{ steps.grype.outputs.sarif}}
+
+      - name: SAST scan (Snyk) - fails on Critical findings
+        if: always()
+        env: 
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN}}
+	run: |
+ 	   npm install -g snyk
+	   snyk test --json > snyk-results.json || true
+  	   cat snyk-results.json
+       	   snyk test --severity-threshold=critical
+
+       - name: Upload Snyk report
+         if: always()
+	 uses: actions/upload-artifact@v4
+	 with:
+	   name: snyk-results
+           path: snyk-results.json
+
+       - name: upload manual DAST?SBOM evidence (screenshot, notes)
+  	 if: always()
+  	 uses: actions/upload-artifact@v4
+	 with:
+	   name: evidence-screenshots
+       	   path: screenshot/
+	   if-no-files-found: ignore
+
+       - name: Write job summary
+ 	 if: always()
+	 run: |
+      	   echo "## Security Scan Summary" >> "$GITHUB_STEP_SUMMARY"
+	   echo "- SBOM: sbom.cyclonedx.json (artifact: sbom)" >> "$GITHUB_STEP_SUMMARY"
+	   echo "- Grype SCA results (artifact: grype-results)" >> "$GITHUB_STEP_SUMMARY"
+	   echo "- Snyk SAST results (artifact: snyk-results)" >> "$GITHUB_STEP_SUMMARY"
+	   echo "- Manual DAST/SBOM evidence screenshots, if present (artifact: evidence-screenshots)" >> "$GITHUB_STEP_SUMMARY"
+	   echo "- Policy: build fails on any Critical finding /CVSS >= 9.0" >> "$GITHUB_STEP_SUMMARY"
