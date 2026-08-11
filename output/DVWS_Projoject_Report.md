@@ -6,11 +6,11 @@
 
 | | |
 |---|---|
-| **Submitted by** |[Athul Thuvattu Paramabth]|
-| **Student ID**  |[35250310]|
-| **Programme** |[Master's in Cybersecurity]|
-| **Professor** |[Danijela]|
-| **Date of Submission**|[11/08/2026]| 
+| **Submitted by** |Athul Thuvattu Paramabth|
+| **Student ID**  |35250310|
+| **Programme** |Master's in Cybersecurity|
+| **Professor** |Danijela Boberić Krstićev|
+| **Date of Submission**|11/08/2026| 
 
 
 ---
