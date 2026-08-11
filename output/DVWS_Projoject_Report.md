@@ -6,11 +6,11 @@
 
 | | |
 |---|---|
-| **Submitted by** | [Athul Thuvattu Paramabth] |
-| **Student ID**  | [35250310] |
-| **Programme** | [Master's in Cybersecurity] |
-| **Professor** | [Danijela] |
-| **Date of Submission**| 
+| **Submitted by** |[Athul Thuvattu Paramabth]|
+| **Student ID**  |[35250310]|
+| **Programme** |[Master's in Cybersecurity]|
+| **Professor** |[Danijela]|
+| **Date of Submission**|[11/08/2026]| 
 
 
 ---
@@ -33,7 +33,7 @@ The findings were consolidated into a prioritized mitigation strategy, and a CI/
 7. [Automation with GitHub Actions](#7-automation-with-github-actions)
 8. [Mitigation Strategy](#8-mitigation-strategy)
 9. [Conclusion](#9-conclusion)
-10. [Reference](#reference)
+10. [Reference](#10-reference)
 
 
 ---
@@ -246,7 +246,7 @@ The file-upload feature accepts arbitrary file content, including an XML file ('
 
 The login form's username field reflects user input without encoding. Submitting '<script>alert("useradmin")</script>' as the username caused immediate execution of the injectsd script, prior to authentication.
 
-![Reflected XSS in login form](13_xss_ref_login_for.png) *Figure 14. Reflected XSS: a script payload in the login username  field. *
+![Reflected XSS in login form](13_xss_ref_login_for.png)*Figure 14. Reflected XSS: a script payload in the login username field. *
 
 
 #### 6.4.5 NoSQL Injection (Medium)
