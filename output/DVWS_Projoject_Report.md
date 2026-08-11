@@ -307,87 +307,87 @@ The complete workflow definition, security.yml, is reproduced below
 
 '''
 
-name: Security Pipeline
+  name: Security Pipeline
 
-on:
+  on:
   push:
   pull_request:
 
-jobs:
-  security-check:
+  jobs:
+    security-check:
     name: SBOM + SCA + SAST with policy gate
     runs-on: ubuntu-latest
     
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: 'npm'
       
-      - name: Install dependencies & build
-        run: | 
-          npm ci
-          npm run build --if-present
+    - name: Install dependencies & build
+      run: | 
+        npm ci
+        npm run build --if-present
       
-      - name: Generate SBOM
-        uses: anchore/sbom-action@v0
-        with:
+     - name: Generate SBOM
+       uses: anchore/sbom-action@v0
+       with:
           path: .
           format: cyclonedx-json
           output-file: sbom.cyclonedx.json
 
-      - name: Upload SBOM
-        uses: actions/upload-artifact@v4
-        with:
+     - name: Upload SBOM
+       uses: actions/upload-artifact@v4
+       with:
           name: sbom
           path: sbom.cyclonedx.json
 
-      - name: Dependency scan (Grype) - fails on Critical / CVSS >= 9.0
-        id: grype
-        uses: anchore/scan-action@v7
-        with:
+     - name: Dependency scan (Grype) - fails on Critical / CVSS >= 9.0
+       id: grype
+       uses: anchore/scan-action@v7
+       with:
           sbom: sbom.cyclonedx.json
           output-format: sarif
           severity-cutoff: critical
           fail-build: true
 
-      - name: Upload Grype SARIF report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
+     - name: Upload Grype SARIF report
+       if: always()
+       uses: actions/upload-artifact@v4
+       with:
           name: grype-results
           path: ${{ steps.grype.outputs.sarif}}
 
-      - name: SAST scan (Snyk) - fails on Critical findings
-        if: always()
+     - name: SAST scan (Snyk) - fails on Critical findings
+       if: always()
         env: 
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN}}
-        run: |
-          npm install -g snyk
-          snyk test --json > snyk-results.json || true
-          cat snyk-results.json
-          snyk test --severity-threshold=critical
+         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN}}
+       run: |
+         npm install -g snyk
+         snyk test --json > snyk-results.json || true
+         cat snyk-results.json
+         snyk test --severity-threshold=critical
 
-          - name: Upload Snyk report
-          if: always()
-          uses: actions/upload-artifact@v4
-          with:
+      - name: Upload Snyk report
+        if: always()
+         uses: actions/upload-artifact@v4
+         with:
            name: snyk-results
            path: snyk-results.json
 
-          - name: upload manual DAST?SBOM evidence (screenshot, notes)
-            if: always()
-            uses: actions/upload-artifact@v4
-            with:
-              name: evidence-screenshots
-              path: screenshot/
+      - name: upload manual DAST?SBOM evidence (screenshot, notes)
+        if: always()
+          uses: actions/upload-artifact@v4
+          with:
+            name: evidence-screenshots
+            path: screenshot/
               if-no-files-found: ignore
 
-          - name: Write job summary
+       - name: Write job summary
             if: always()
             run: |
               echo "## Security Scan Summary" >> "$GITHUB_STEP_SUMMARY"
